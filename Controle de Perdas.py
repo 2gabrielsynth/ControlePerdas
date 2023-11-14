@@ -38,7 +38,7 @@ def adicionar_valor():
         valores.append((valor_ean, valor_qtd))
         entry_ean.delete(0, 'end')  
         entry_qtd.delete(0, 'end')
-        entry_ean.focus_set()  # Retorna o foco para a primeira caixa de texto
+        entry_ean.focus_set()  
 
 def limpar_status():
     label_status.configure(text="")
@@ -48,7 +48,7 @@ root.title("TÍTULO DO SEU PROGRAMA AQUI")
 root.geometry("400x400")
 ctk.set_appearance_mode("dark")
 
-# Rótulo
+
 label_ean = ctk.CTkLabel(root, text="Digite o código EAN:")
 label_ean.pack(pady=10)
 label_ean.configure(font=("Arial", 14, "bold"))
@@ -75,9 +75,9 @@ label_status.pack(pady=10)
 entry_ean.bind('<Tab>', lambda e: entry_qtd.focus_set())
 entry_qtd.bind('<Tab>', lambda e: entry_ean.focus_set())
 
-# Associar a tecla "Enter" para mover do entry_ean para entry_qtd
+
 entry_ean.bind('<Return>', lambda e: entry_qtd.focus_set())
-# Associar a tecla "Enter" na segunda caixa de texto para adicionar o valor
+
 entry_qtd.bind('<Return>', lambda e: adicionar_valor())
 
 root.mainloop()
